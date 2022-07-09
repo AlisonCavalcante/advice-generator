@@ -1,11 +1,19 @@
 <div class="card">
-  <div class="card__title">
-    <p>Advice #{{advice?.id}}</p>
+  <div class="card__content" style="padding: 20px; display: flex; flex-direction: column">
+    <div class="card__title">
+      <p>Advice #{{advice?.id}}</p>
+    </div>
+    <div class="card__body">
+      <div *ngIf="isLoading" class="spinner-border" style="color: hsl(150, 100%, 66%); width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p *ngIf="!isLoading" class="card-body__advice">{{advice?.advice}}</p>
+    </div>
+    <div class="card__footer">
+      <img class="img" src="../../../assets/imgs/pattern-divider-desktop.svg" alt="divider">
+    </div>
   </div>
-  <div class="card__body">
-    <p class="card-body__advice">{{advice?.advice}}</p>
-  </div>
-  <div class="card__footer">
-    <img class="img" src="../../../assets/imgs/pattern-divider-desktop.svg" alt="divider">
-  </div>
+  <button (click)="getAdviceRandom()" class="card__button">
+    <img src="../../../assets/imgs/icon-dice.svg" >
+  </button>
 </div>
