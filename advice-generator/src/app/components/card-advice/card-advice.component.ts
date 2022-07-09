@@ -1,3 +1,4 @@
+import { AdviceService } from './../../services/advice.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardAdviceComponent implements OnInit {
 
-  constructor() { }
+  advice: any;
+  constructor(private adviceService: AdviceService) { }
 
   ngOnInit(): void {
+    this.getAdviceRandom();
+  }
+
+  getAdviceRandom(){
+    this.adviceService.getAdviceRandom().subscribe( res => {
+      this.advice = res.slip;
+    })
+
   }
 
 }

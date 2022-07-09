@@ -13,3 +13,24 @@
 .card__title{
   color: hsl(150, 100%, 66%);
 }
+
+.card-body__advice{
+  padding: 15px
+}
+
+.card__footer{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card__footer img {
+  width: 80%;
+}
+
+@media (max-width: 410px) {
+  .card {
+    width: auto;
+    padding: 20px;
+  }
+}
