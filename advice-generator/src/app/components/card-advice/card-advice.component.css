@@ -45,6 +45,11 @@
   background-color: hsl(150, 100%, 66%);
 }
 
+.card__button:hover {
+  background-color: hsl(217, 19%, 24%);
+  border-color: hsl(150, 100%, 66%);
+}
+
 @media (max-width: 410px) {
   .card {
     width: auto;
